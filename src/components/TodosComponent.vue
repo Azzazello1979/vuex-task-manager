@@ -2,8 +2,8 @@
   <div>
     <h3>Todos</h3>
     <div class="todos">
-      <div class="todo" v-for="todo in allTodos" :key="todo.id">
-        {{ todo.title }}
+      <div class="todo" v-for="character in allCharacters" :key="character.url">
+        {{ character.aliases[0] }}
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@ export default {
   methods: {
     ...mapActions(["fetchCharacters"]),
   },
-  computed: mapGetters(["allTodos"]),
+  computed: mapGetters(["allCharacters"]),
   created() {
     this.fetchCharacters();
   },

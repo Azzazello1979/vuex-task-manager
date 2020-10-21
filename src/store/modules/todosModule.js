@@ -1,24 +1,25 @@
 import axios from "axios";
 
 const state = {
-  todos: [
-    { id: 1, title: "Todo1" },
-    { id: 2, title: "Todo2" },
-    { id: 3, title: "Todo3" },
-  ],
+  characters: [],
 };
 const getters = {
-  allTodos: (state) => state.todos,
+  allCharacters: (state) => state.characters,
 };
 const actions = {
-  async fetchCharacters() {
+  async fetchCharacters({ commit }) {
     const response = await axios.get(
       "https://www.anapioficeandfire.com/api/characters"
     );
     console.log(response.data);
+    commit("setCharacters", response.data);
   },
 };
-const mutations = {};
+const mutations = {
+  setCharacters: (state, characters) => {
+    state.characters = characters;
+  },
+};
 
 export default {
   state,
