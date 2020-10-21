@@ -2,7 +2,6 @@ import axios from "axios";
 
 const state = {
   characters: [],
-  character: {},
 };
 const getters = {
   allCharacters: (state) => state.characters,

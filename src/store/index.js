@@ -1,6 +1,6 @@
 import Vuex from "vuex";
 import Vue from "vue";
-import todosModule from "./modules/todosModule";
+import charactersModule from "./modules/charactersModule";
 
 //Load Vuex
 Vue.use(Vuex);
@@ -8,6 +8,6 @@ Vue.use(Vuex);
 //Create Store
 export default new Vuex.Store({
   modules: {
-    todosModule,
+    charactersModule,
   },
 });

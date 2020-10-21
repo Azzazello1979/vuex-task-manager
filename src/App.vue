@@ -4,19 +4,19 @@
       <AddCharacterComponent />
     </div>
     <div class="container">
-      <TodosComponent />
+      <CharactersComponent />
     </div>
   </div>
 </template>
 
 <script>
-import TodosComponent from "./components/TodosComponent";
+import CharactersComponent from "./components/CharactersComponent";
 import AddCharacterComponent from "./components/AddCharacterComponent";
 
 export default {
   name: "App",
   components: {
-    TodosComponent,
+    CharactersComponent,
     AddCharacterComponent,
   },
 };

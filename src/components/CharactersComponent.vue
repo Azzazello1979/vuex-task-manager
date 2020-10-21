@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Todos</h3>
+    <h3>Characters:</h3>
     <div class="todos">
       <div class="todo" v-for="character in allCharacters" :key="character.url">
         {{ character.aliases[0] }}
@@ -12,7 +12,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
-  name: "TodosComponent",
+  name: "CharactersComponent",
   methods: {
     ...mapActions(["fetchCharacters"]),
   },

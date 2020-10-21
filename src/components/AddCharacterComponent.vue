@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>character is {{ characterName }}</h2>
+    <h2>new character is {{ characterName }}</h2>
     <form @submit="onSubmit">
       <input type="text" v-model="characterName" />
       <input type="submit" value="Add character" />
@@ -22,6 +22,7 @@ export default {
     onSubmit(e) {
       e.preventDefault();
       this.addCharacter(this.characterName);
+      this.characterName = "";
     },
   },
 };
