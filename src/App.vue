@@ -3,6 +3,7 @@
     <div class="top-bar">
       <AddCharacterComponent />
       <FilterCharactersComponent />
+      <RecordSizeComponent />
     </div>
     <div class="container">
       <CharactersComponent />
@@ -14,6 +15,7 @@
 import CharactersComponent from "./components/CharactersComponent";
 import AddCharacterComponent from "./components/AddCharacterComponent";
 import FilterCharactersComponent from "./components/FilterCharactersComponent";
+import RecordSizeComponent from "./components/RecordSizeComponent";
 
 export default {
   name: "App",
@@ -21,6 +23,7 @@ export default {
     CharactersComponent,
     AddCharacterComponent,
     FilterCharactersComponent,
+    RecordSizeComponent,
   },
 };
 </script>

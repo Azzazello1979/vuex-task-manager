@@ -1,13 +1,18 @@
 import axios from "axios";
 
+// STATE
 const state = {
   characters: [],
   filteredCharacters: [],
 };
+
+// GETTERS
 const getters = {
   allCharacters: (state) => state.characters,
   filteredCharacters: (state) => state.filteredCharacters,
 };
+
+// ACTIONS
 const actions = {
   async fetchCharacters({ commit }) {
     const response = await axios.get(
@@ -26,7 +31,12 @@ const actions = {
   filterDownCharacters({ commit }, filterText) {
     commit("filterCharacters", filterText);
   },
+  trimDownCharacters({ commit }, size) {
+    commit("trimByRecordSize", size);
+  },
 };
+
+// MUTATIONS
 const mutations = {
   setCharacters: (state, characters) => {
     state.characters = characters;
@@ -51,6 +61,9 @@ const mutations = {
     state.filteredCharacters = state.characters.filter((c) =>
       c.aliases[0].match(new RegExp(filterText, "i"))
     );
+  },
+  trimByRecordSize: (state, size) => {
+    state.filteredCharacters = state.characters.slice(0, size);
   },
 };
 
