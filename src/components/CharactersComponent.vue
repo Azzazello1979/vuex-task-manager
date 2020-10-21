@@ -4,6 +4,10 @@
     <div class="todos">
       <div class="todo" v-for="character in allCharacters" :key="character.url">
         {{ character.aliases[0] }}
+        <i
+          class="fas fa-trash-alt"
+          @click="onDeleteCharacter(character.url)"
+        ></i>
       </div>
     </div>
   </div>
@@ -14,7 +18,10 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "CharactersComponent",
   methods: {
-    ...mapActions(["fetchCharacters"]),
+    ...mapActions(["fetchCharacters", "deleteCharacter"]),
+    onDeleteCharacter(url) {
+      this.deleteCharacter(url);
+    },
   },
   computed: {
     ...mapGetters(["allCharacters"]),

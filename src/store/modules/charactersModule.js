@@ -18,6 +18,9 @@ const actions = {
   addCharacter({ commit }, characterName) {
     commit("setCharacter", characterName);
   },
+  deleteCharacter({ commit }, url) {
+    commit("removeCharacter", url);
+  },
 };
 const mutations = {
   setCharacters: (state, characters) => {
@@ -26,9 +29,14 @@ const mutations = {
   setCharacter: (state, characterName) => {
     let character = {
       aliases: [characterName],
-      url: Date.now(),
+      url:
+        "https://www.anapioficeandfire.com/api/characters/" +
+        Date.now().toString(),
     };
     state.characters.unshift(character);
+  },
+  removeCharacter: (state, url) => {
+    state.characters = [...state.characters.filter((c) => c.url !== url)];
   },
 };
 
