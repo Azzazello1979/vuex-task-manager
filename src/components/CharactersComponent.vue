@@ -2,7 +2,11 @@
   <div>
     <h3>Characters:</h3>
     <div class="todos">
-      <div class="todo" v-for="character in allCharacters" :key="character.url">
+      <div
+        class="todo"
+        v-for="character in filteredCharacters"
+        :key="character.url"
+      >
         {{ character.aliases[0] }}
         <i
           class="fas fa-trash-alt"
@@ -24,7 +28,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["allCharacters"]),
+    ...mapGetters(["filteredCharacters"]),
   },
   created() {
     this.fetchCharacters();

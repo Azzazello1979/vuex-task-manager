@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <div>
+    <div class="top-bar">
       <AddCharacterComponent />
+      <FilterCharactersComponent />
     </div>
     <div class="container">
       <CharactersComponent />
@@ -12,17 +13,23 @@
 <script>
 import CharactersComponent from "./components/CharactersComponent";
 import AddCharacterComponent from "./components/AddCharacterComponent";
+import FilterCharactersComponent from "./components/FilterCharactersComponent";
 
 export default {
   name: "App",
   components: {
     CharactersComponent,
     AddCharacterComponent,
+    FilterCharactersComponent,
   },
 };
 </script>
 
 <style>
+.top-bar {
+  display: flex;
+  justify-content: space-evenly;
+}
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   line-height: 1.6;
