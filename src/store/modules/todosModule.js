@@ -2,6 +2,7 @@ import axios from "axios";
 
 const state = {
   characters: [],
+  character: {},
 };
 const getters = {
   allCharacters: (state) => state.characters,
@@ -14,10 +15,21 @@ const actions = {
     console.log(response.data);
     commit("setCharacters", response.data);
   },
+
+  addCharacter({ commit }, characterName) {
+    commit("setCharacter", characterName);
+  },
 };
 const mutations = {
   setCharacters: (state, characters) => {
     state.characters = characters;
+  },
+  setCharacter: (state, characterName) => {
+    let character = {
+      aliases: [characterName],
+      url: Date.now(),
+    };
+    state.characters.unshift(character);
   },
 };
 

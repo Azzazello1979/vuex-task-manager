@@ -13,11 +13,12 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "TodosComponent",
-
   methods: {
     ...mapActions(["fetchCharacters"]),
   },
-  computed: mapGetters(["allCharacters"]),
+  computed: {
+    ...mapGetters(["allCharacters"]),
+  },
   created() {
     this.fetchCharacters();
   },
